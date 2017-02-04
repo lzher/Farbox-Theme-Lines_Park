@@ -1,0 +1,18 @@
+extends base
+block title
+	title= post.title
+	
+block main
+	include ui/post_detail.jade
+	
+block pager
+	if has(post.metadata['pager'])
+		show_pager = post.metadata['pager']
+	elif has(site.configs['pagers'])
+		show_pager = site.configs['pagers']
+	else
+		show_pager = True
+	if show_pager
+		include ui/post_pager.jade
+	else
+		// Pager is diabled.

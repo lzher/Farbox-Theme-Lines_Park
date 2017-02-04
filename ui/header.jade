@@ -1,0 +1,21 @@
+if site.configs.cover and has(site.configs.cover)
+	site_cover = site.configs.cover
+else
+	site_cover = '/farbox_free_image.jpg'
+
+.header_container
+	h1
+		a.site_name(href="/")= site.title
+	nav.navbar
+		a(href="/") Home
+		if has('posts')
+			&nbsp;|
+			a(href="/archive") Archive
+		if has('images')
+			&nbsp;|
+			a(href='/album') Album
+			if not has('posts')
+				+redirect('/album')
+		if has('about.md')
+			&nbsp;|
+			a(href="/p/about") About

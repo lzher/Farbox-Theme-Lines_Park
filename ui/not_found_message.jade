@@ -1,0 +1,9 @@
+.not_found_message_container
+	h1.not_found_title 404 Not Found
+	p This page was lost. Is there something wrong?
+	p Any problem, please contact 
+		if site.configs['email']
+			code= site.configs['email']
+		else 
+			span the administrator
+		| .

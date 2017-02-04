@@ -1,0 +1,16 @@
+extends base
+
+mpost = get_doc(path2+'.md') or get_doc(path2+'.txt') or get_doc(path2+'.mk') or get_doc(path2+'.markdown')
+
+block title
+	if path2 == 'site' or not mpost
+		+raise_404()
+	title= mpost.title
+	
+block main
+	post = mpost
+	allow_comment = False
+	include ui/post_detail.jade
+
+block pager
+	// Page does not have a pager.

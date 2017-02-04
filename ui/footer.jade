@@ -1,0 +1,13 @@
+.footer_container
+	p.copyright
+		&copy;
+		first_post = get_data(type='post',sort='asc',limit=1,with_page=False)
+		last_post = get_data(type='post',sort='desc',limit=1,with_page=False)
+		first_year = first_post.date.format('%Y')
+		last_year = last_post.date.format('%Y')
+		if first_year == last_year
+			copyright_year = first_year
+		else
+			copyright_year = first_year + '-' + last_year
+		span= copyright_year + ' '
+		a(href= "/")= site.title

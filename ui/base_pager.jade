@@ -1,0 +1,14 @@
+.pager_container
+	p.direct_indicator
+		if has_pre
+			a.prev_page(href= pre_url) 
+				i.fa.fa-arrow-left
+				span= ' %s'%(pre_title or 'Prev')
+		elif has_next
+			span &nbsp;
+		if has_next
+			a.next_page(href= next_url)
+				span= '%s '%(next_title or 'Next')
+				i.fa.fa-arrow-right
+		elif has_pre
+			span &nbsp;
