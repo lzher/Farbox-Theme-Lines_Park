@@ -1,0 +1,10 @@
+.tagcloud_container
+	h1.tagcloud_title= mtitle
+	.tagcloud_content
+		if not has(mtags) or mtags.length <= 0
+			p No tag found.
+		else
+			for tag_name, tag_count in mtags
+				span.tagcloud_entry
+					a(href='/tag/{{ tag_name }}',style='font-size: {{ tag_count*0.2+0.8 }}em;')= tag_name
+					span.tagcloud_count (#{tag_count})

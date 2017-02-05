@@ -18,6 +18,10 @@ $back_to_top_color: gray;
 $archive_monthly_date_color: indianred;
 $archive_monthly_num_color: gray;
 $not_found_title_color: indianred;
+$tagcloud_title_color: indianred;
+$tagcloud_count_color: gray;
+$categories_title_color: indianred;
+$categories_count_color: gray;
 
 $back_to_top_area_height: 6rem;
 $back_to_top_area_width: 8rem;
@@ -229,6 +233,46 @@ a {
 	}
 }
 
+.tagcloud_container {
+	@extend .main_width, .align_center;
+	.tagcloud_title {
+		color:$tagcloud_title_color;
+		text-align: center;
+	}
+	.tagcloud_content {
+		text-align: center;
+		width: 100%;
+		.tagcloud_entry {
+			margin: 0.5em;
+			display: inline-block;
+			.tagcloud_count {
+				font-size: 0.8em;
+				color: $tagcloud_count_color;
+			}
+		}
+	}
+}
+
+.categories_container {
+	@extend .main_width, .align_center;
+	.categories_title {
+		color:$categories_title_color;
+		text-align: center;
+	}
+	.categories_content {
+		text-align: center;
+		width: 100%;
+		.category_entry {
+			margin: 0.5em;
+			display: inline-block;
+			.category_count {
+				font-size: 0.8em;
+				color: $categories_count_color;
+			}
+		}
+	}
+}
+
 @media (max-width: 767px) {
 	.main_width {
 		width: 90%
@@ -236,13 +280,19 @@ a {
 	.full_width {
 		width: 100%;
 	}
+	.hidden_on_small {
+		display:none;
+	}
 }
 @media (max-width: 440px) {
 	.post_list_entry_footer {
 		display: none;
 	}
+	.hidden_on_tiny {
+		display:none;
+	}
 }
 
 .updater {
-	margin: 2em;
+	margin: 1em;
 }

@@ -1,0 +1,12 @@
+.categories_container
+	h1.categories_title= mtitle
+	.categories_content
+		if not has(mcategories) or mtags.length <= 0
+			p No category found.
+		else
+			for category in mcategories
+				category_name = category['title']
+				category_count = category['posts_count']
+				span.category_entry
+					a(href='/category/{{ category_name }}',style='font-size: {{ category_count*0.2+0.8 }}em;')= category_name
+					span.category_count (#{category_count})

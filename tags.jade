@@ -1,0 +1,12 @@
+extends base
+
+otags = site.tags
+otitle = 'Tag Cloud'
+
+block title
+	title= otitle
+
+block main
+	mtags = otags
+	mtitle = otitle
+	include ui/tagcloud.jade

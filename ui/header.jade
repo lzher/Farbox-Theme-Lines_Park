@@ -1,21 +1,25 @@
-if site.configs.cover and has(site.configs.cover)
-	site_cover = site.configs.cover
-else
-	site_cover = '/farbox_free_image.jpg'
-
 .header_container
 	h1
-		a.site_name(href="/")= site.title
+		a.site_name(href='/')= site.title
 	nav.navbar
-		a(href="/") Home
+		a(href='/') Home
 		if has('posts')
-			&nbsp;|
-			a(href="/archive") Archive
+			span.header_nav_categories.hidden_on_tiny
+				&nbsp;|
+				a(href='/categories') Categories
+			span.header_nav_tags.hidden_on_tiny
+				&nbsp;|
+				a(href='/tags') Tags
+			span.header_nav_archive.hidden_on_small
+				&nbsp;|
+				a(href='/archive') Archives
 		if has('images')
-			&nbsp;|
-			a(href='/album') Album
-			if not has('posts')
-				+redirect('/album')
+			span.header_nav_album.hidden_on_small
+				&nbsp;|
+				a(href='/album') Album
+				if not has('posts')
+					+redirect('/album')
 		if has('about.md')
-			&nbsp;|
-			a(href="/p/about") About
+			span.header_nav_about
+				&nbsp;|
+				a(href='/p/about') About

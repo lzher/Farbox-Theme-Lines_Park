@@ -1,0 +1,12 @@
+extends base
+
+otitle = 'Categories'
+ocategories = categories
+
+block title
+	title= otitle
+
+block main
+	mtitle = otitle
+	mcategories = ocategories
+	include ui/categories_list.jade
