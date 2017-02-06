@@ -3,16 +3,6 @@
 		a.site_name(href='/')= site.title
 	nav.navbar
 		a(href='/') Home
-		if has('posts')
-			span.header_nav_categories.hidden_on_tiny
-				&nbsp;|
-				a(href='/categories') Categories
-			span.header_nav_tags.hidden_on_tiny
-				&nbsp;|
-				a(href='/tags') Tags
-			span.header_nav_archive.hidden_on_small
-				&nbsp;|
-				a(href='/archive') Archives
 		if has('images')
 			span.header_nav_album.hidden_on_small
 				&nbsp;|

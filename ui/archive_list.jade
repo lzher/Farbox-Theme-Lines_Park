@@ -1,12 +1,17 @@
 data = get_data(type='post',limit=300, sort='desc').group('-date:year+month')
 .archive_list_container
-	for key,posts in data
-		.archive_entry
-			.archive_monthly_title
-				span.archive_monthly_date= posts[0].date.format('%Y-%m')
-				| 
-				span.archive_monthly_num (#{posts.length})
-			ul.archive_monthly_list
-				for post in posts
-					li
-						a(href=post.url)= post.title
+	table.archive_list_data
+		tbody
+			for key,posts in data
+				tr.archive_entry
+					td
+						.archive_monthly_title
+							span.archive_monthly_date= posts[0].date.format('%Y-%m')
+							| 
+							span.archive_monthly_num (#{posts.length})
+					td
+						.archive_monthly_list
+							ul
+								for post in posts
+									li
+										a(href=post.url)= post.title

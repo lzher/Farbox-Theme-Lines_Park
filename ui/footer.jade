@@ -10,4 +10,15 @@
 		else
 			copyright_year = first_year + '-' + last_year
 		span= copyright_year + ' '
-		a(href= "/")= site.title
+		a.footer_site_title(href= "/")= site.title
+		if has('posts')
+			span.footer_navbar
+				span.header_nav_categories.hidden_on_small
+					&nbsp;|
+					a(href='/categories') Categories
+				span.header_nav_tags.hidden_on_small
+					&nbsp;|
+					a(href='/tags') Tags
+				span.header_nav_archive.hidden_on_small
+					&nbsp;|
+					a(href='/archive') Archives

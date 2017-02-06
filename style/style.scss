@@ -11,6 +11,11 @@ $post_list_title_color: indianred;
 $post_list_title_hover_color: lightcoral;
 $post_list_footer_date_color: lightsteelblue;
 $footer_border_top_color: cadetblue;
+$footer_text_color: darkslategray;
+$footer_site_title_color: royalblue;
+$footer_site_title_hover_color: lightcoral;
+$footer_nav_color: peru;
+$footer_nav_hover_color: darkslategray;
 $post_detail_title_color: indianred;
 $post_detail_content_end_color: darkred;
 $post_comments_leave_hint_hr_color: silver;
@@ -144,6 +149,20 @@ a {
 	border-top: 1px $footer_border_top_color solid;
 	p.copyright {
 		margin-top: 1.5em;
+		color: $footer_text_color;
+		line-height: 2.5em;
+		a {
+			color: $footer_nav_color;
+			&:hover {
+				color: $footer_nav_hover_color;
+			}
+		}
+		a.footer_site_title {
+			color: $footer_site_title_color;
+			&:hover {
+				color: $footer_site_title_hover_color;
+			}
+		}
 	}
 }
 
@@ -209,17 +228,27 @@ a {
 .archive_list_container {
 	@extend .main_width;
 	margin: 2em auto;
-	.archive_entry {
-		margin: 1.6em 0;
-		.archive_monthly_title {
-			span.archive_monthly_date {
-				color: $archive_monthly_date_color;
-				font-size: 1.6em;
-				font-weight: bold;
-			}
-			span.archive_monthly_num {
-				font-size: 1em;
-				color: $archive_monthly_num_color;
+	table.archive_list_data {
+		border: 0;
+		tbody {
+			vertical-align: baseline;
+			.archive_entry {
+				margin: 1.6em auto;
+				td {
+					background-color: transparent;
+					margin-bottom: 1em;
+					.archive_monthly_title {
+						span.archive_monthly_date {
+							color: $archive_monthly_date_color;
+							font-size: 1.6em;
+							font-weight: bold;
+						}
+						span.archive_monthly_num {
+							font-size: 1em;
+							color: $archive_monthly_num_color;
+						}
+					}
+				}
 			}
 		}
 	}
